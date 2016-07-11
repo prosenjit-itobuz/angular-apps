@@ -1,2 +1,3 @@
-www/lib
+public/components
 node_modules
+build

@@ -2,12 +2,20 @@
 <html>
 <head>
 	<title>Angular Apps</title>
-	<!-- bower:js -->
-	<script src="lib/angular/angular.js"></script>
-	<!-- endbower -->
-	<script src="scripts/app.js"></script>
+	<!-- inject:css -->
+	<link rel="stylesheet" href="/www/css/main.css">
+	<!-- endinject -->
+
 </head>
 <body>
+	<div class="well">{{welcome}}</div>
 
+<!-- bower:js -->
+<script src="../public/components/angular/angular.js"></script>
+<!-- endbower -->
+
+<!-- inject:js -->
+<script src="/www/scripts/app.js"></script>
+<!-- endinject -->
 </body>
 </html>

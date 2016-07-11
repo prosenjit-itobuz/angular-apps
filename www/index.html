@@ -3,16 +3,24 @@
 <head>
 	<title>Angular Apps</title>
 	<!-- inject:css -->
+	<link rel="stylesheet" href="/www/css/main.css">
 	<!-- endinject -->
 
 </head>
 <body ng-controller="appCtrl">
 	<div class="well">{{welcome}}</div>
 
+<!-- build:js scripts/libs.js -->
 <!-- bower:js -->
+<script src="../public/components/angular/angular.js"></script>
 <!-- endbower -->
+<!-- endbuild -->
 
+<!-- build:js scripts/app.build.js -->
 <!-- inject:js -->
+<script src="/scripts/app.js"></script>
+<script src="/scripts/app.controller.js"></script>
 <!-- endinject -->
+<!-- endbuild -->
 </body>
 </html>

@@ -3,6 +3,6 @@ Main script
 */
 'use strict';
 var app = angular.module('app', [])
-	.run('', ['', function(){
+	.run([function(){
 		console.log('app is running.')
 	}]);

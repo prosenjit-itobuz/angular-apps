@@ -5,19 +5,22 @@ var angularFilesort = require('gulp-angular-filesort');
 var wiredep = require('wiredep').stream;
 var browserSync = require('browser-sync');
 var browserSyncSpa = require('browser-sync-spa');
+var useref = require('gulp-useref');
+var uglify = require('gulp-uglify');
+var  gulpif = require('gulp-if');
 
 gulp.task('inject', function () {
 	var target = gulp.src('./www/index.html');
 
-	var scripts = gulp.src(['./www/**/*.js'])
+	var scripts = gulp.src(['./**/*.js'], { cwd: __dirname + '/www'})
 			.pipe(angularFilesort());
   var styles = gulp.src(['./www/**/*.css'])
 
 	return target
 	.pipe(wiredep())
-	.pipe(inject(scripts))
+	.pipe(inject(scripts), {relative: true})
   .pipe(inject(styles))
-	.pipe(gulp.dest('./build/'));
+	.pipe(gulp.dest('./www/'));
 });
 
 gulp.task('live', function() {
@@ -39,12 +42,19 @@ gulp.task('live', function() {
  
   browserSync.init({
     server: {
-    baseDir: ['build'],
+    baseDir: ['www'],
       routes: {
         '/public/components': 'public/components',
         '/www': 'www'
       }
     },
-    startPath: '/build'
+    startPath: '/'
   });
+});
+
+gulp.task('script:build', function(){
+  return gulp.src('./www/*.html', { searchPath: './www' })
+  .pipe(useref())
+  .pipe(gulpif('*.js', uglify()))
+  .pipe(gulp.dest('./build'));
 });

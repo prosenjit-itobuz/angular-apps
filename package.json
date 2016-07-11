@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/developer-prosenjit/angular-apps/issues"
   },
-  "homepage": "https://github.com/developer-prosenjit/angular-apps#readme"
+  "homepage": "https://github.com/developer-prosenjit/angular-apps#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "wiredep": "^4.0.0"
+  }
 }

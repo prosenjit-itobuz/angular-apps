@@ -1,0 +1,21 @@
+{
+  "name": "angular-apps",
+  "version": "1.0.0",
+  "description": "Angular apps for learning",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/developer-prosenjit/angular-apps.git"
+  },
+  "keywords": [
+    "Angular",
+    "apps",
+    "for",
+    "learning"
+  ],
+  "author": "Prosenjit Manna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/developer-prosenjit/angular-apps/issues"
+  },
+  "homepage": "https://github.com/developer-prosenjit/angular-apps#readme"
+}

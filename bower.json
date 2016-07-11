@@ -1,0 +1,24 @@
+{
+  "name": "angular-apps",
+  "description": "Angular apps for learning",
+  "main": "",
+  "authors": [
+    "Prosenjit Manna"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Angular",
+    "apps",
+    "for",
+    "learning"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

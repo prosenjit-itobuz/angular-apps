@@ -9,12 +9,14 @@ var browserSyncSpa = require('browser-sync-spa');
 gulp.task('inject', function () {
 	var target = gulp.src('./www/index.html');
 
-	var sources = gulp.src(['./www/**/*.js', './www/**/*.css'])
+	var scripts = gulp.src(['./www/**/*.js'])
 			.pipe(angularFilesort());
+  var styles = gulp.src(['./www/**/*.css'])
 
 	return target
 	.pipe(wiredep())
-	.pipe(inject(sources))
+	.pipe(inject(scripts))
+  .pipe(inject(styles))
 	.pipe(gulp.dest('./build/'));
 });
 

@@ -7,7 +7,8 @@ var browserSync = require('browser-sync');
 var browserSyncSpa = require('browser-sync-spa');
 var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
-var  gulpif = require('gulp-if');
+var gulpif = require('gulp-if');
+var sass = require('gulp-sass');
 
 gulp.task('inject', function () {
 	var target = gulp.src('./www/index.html');
@@ -23,14 +24,20 @@ gulp.task('inject', function () {
 	.pipe(gulp.dest('./www/'));
 });
 
+gulp.task('sass', function () {
+  return gulp.src('./www/scss/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./www/css'));
+});
+
 gulp.task('live', function() {
- 
+
   browserSync.use(browserSyncSpa({
     selector: '[ng-app]'
   }));
 
   gulp.watch('www/**/*.js', function(event) {
-  	gulp.start('inject');    
+  	gulp.start('inject');
   });
 
   gulp.watch('www/**/*.html', function(event) {
@@ -38,8 +45,8 @@ gulp.task('live', function() {
   });
 
   gulp.watch(['www/*.html', 'bower.json'], ['inject']);
-   
- 
+
+
   browserSync.init({
     server: {
     baseDir: ['www'],

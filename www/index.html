@@ -4,19 +4,20 @@
 	<title>Angular Apps</title>
 	<!-- inject:css -->
 	<link rel="stylesheet" href="/www/css/main.css">
+	<link rel="stylesheet" href="/www/css/vendor.css">
 	<!-- endinject -->
 
 </head>
 <body ng-controller="appCtrl">
 	 <div ui-view></div>
-	 <!-- We'll also add some navigation: -->
-    <a ui-sref="state1">State 1</a>
-    <a ui-sref="state2">State 2</a>
 
 <!-- build:js scripts/libs.js -->
 <!-- bower:js -->
 <script src="../public/components/angular/angular.js"></script>
 <script src="../public/components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../public/components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="../public/components/jquery/dist/jquery.js"></script>
+<script src="../public/components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 

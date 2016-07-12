@@ -8,11 +8,15 @@
 
 </head>
 <body ng-controller="appCtrl">
-	<div class="well">{{welcome}}</div>
+	 <div ui-view></div>
+	 <!-- We'll also add some navigation: -->
+    <a ui-sref="state1">State 1</a>
+    <a ui-sref="state2">State 2</a>
 
 <!-- build:js scripts/libs.js -->
 <!-- bower:js -->
 <script src="../public/components/angular/angular.js"></script>
+<script src="../public/components/angular-ui-router/release/angular-ui-router.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 

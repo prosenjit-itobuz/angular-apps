@@ -2,7 +2,8 @@
 Main script
 */
 'use strict';
-var app = angular.module('app', ['ui.router'])
+var dependencies = ['ui.router', 'firebase"']
+var app = angular.module('app', dependencies)
 	.run([function(){
 		console.log('app is running.')
 	}]);
@@ -22,6 +23,7 @@ var app = angular.module('app', ['ui.router'])
 	    // Student app
 	    .state('school', {
 	      url: "/school",
+	      controllers: 'schoolCtrl',
 	      templateUrl: "views/school/school.html"
 	    })
 	});
